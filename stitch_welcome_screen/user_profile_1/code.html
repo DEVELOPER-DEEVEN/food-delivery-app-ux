@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - Premium Food Delivery</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-dark": "#342618",
+                        "surface-highlight": "#493622",
+                        "text-gold": "#cbad90"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .font-serif-heading {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden font-display text-[#111418] dark:text-white pb-10">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-black/5 dark:border-white/5">
+<div class="text-black dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-serif-heading">Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<p class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0 cursor-pointer">Edit</p>
+</div>
+</div>
+<!-- Profile Header -->
+<div class="flex p-4 flex-col items-center pt-6">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-28 w-28 shadow-xl border-2 border-primary" data-alt="Portrait of a user with a friendly smile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDL_VPzxbgRuwbTQJcnid3GAOALKyZ5sexUIG-tSe31cBkoaAM-M5COctxxHhvZ5b6EB-6mCK4Upum_RG4F_7PS-SsRQAQD-qp4w0xTwAbZXnKzmLuuLpRYju9nBJbopylWNWNy0Sbprx0w0gm6RXcQ75qckdvw2kUIcAljKHoo0TUD_aob66SWd6xD4NpG7c8ONW9ezKddKTvau34LRrEj0OB4w5gyHEwwEaHUe9B_Wf49Nnb_p-1H2N58Gqf9Nr2oTIUGnU3vFHE");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-background-dark rounded-full p-1.5 border-4 border-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">star</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center mt-4 gap-1">
+<p class="text-black dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] text-center font-serif-heading">James Dawson</p>
+<div class="flex items-center gap-2">
+<span class="text-text-gold text-sm font-medium tracking-wide uppercase">Gold Member</span>
+<span class="w-1 h-1 rounded-full bg-text-gold"></span>
+<span class="text-gray-500 dark:text-gray-400 text-sm font-normal">New York, NY</span>
+</div>
+</div>
+</div>
+<!-- Quick Actions Row -->
+<div class="@container mb-6">
+<div class="gap-4 px-6 grid grid-cols-3 justify-items-center">
+<button class="flex flex-col items-center gap-2 group cursor-pointer w-full">
+<div class="rounded-full bg-gray-200 dark:bg-surface-highlight p-3.5 transition-colors group-hover:bg-primary/20 group-active:scale-95 duration-200">
+<span class="material-symbols-outlined text-gray-700 dark:text-white text-[24px]">headset_mic</span>
+</div>
+<p class="text-gray-900 dark:text-white text-xs font-medium leading-normal">Help</p>
+</button>
+<button class="flex flex-col items-center gap-2 group cursor-pointer w-full">
+<div class="rounded-full bg-gray-200 dark:bg-surface-highlight p-3.5 transition-colors group-hover:bg-primary/20 group-active:scale-95 duration-200">
+<span class="material-symbols-outlined text-gray-700 dark:text-white text-[24px]">account_balance_wallet</span>
+</div>
+<p class="text-gray-900 dark:text-white text-xs font-medium leading-normal">Wallet</p>
+</button>
+<button class="flex flex-col items-center gap-2 group cursor-pointer w-full">
+<div class="rounded-full bg-gray-200 dark:bg-surface-highlight p-3.5 transition-colors group-hover:bg-primary/20 group-active:scale-95 duration-200">
+<span class="material-symbols-outlined text-gray-700 dark:text-white text-[24px]">settings</span>
+</div>
+<p class="text-gray-900 dark:text-white text-xs font-medium leading-normal">Settings</p>
+</button>
+</div>
+</div>
+<!-- Gold Status Card -->
+<div class="px-4 mb-8">
+<div class="relative overflow-hidden rounded-xl shadow-lg bg-gradient-to-br from-surface-dark to-[#4a3522] border border-white/5">
+<!-- Abstract Pattern Background -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 100% 0%, #f48c25 0%, transparent 40%);"></div>
+<div class="relative p-5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-text-gold text-xs font-bold tracking-widest uppercase">Premium Benefits</p>
+<h3 class="text-white text-2xl font-serif-heading font-medium italic">Gold Status</h3>
+</div>
+<span class="material-symbols-outlined text-text-gold text-3xl">workspace_premium</span>
+</div>
+<div class="flex flex-col gap-2 mt-2">
+<div class="flex justify-between text-sm text-gray-300">
+<span>Points to Platinum</span>
+<span class="text-white font-medium">850 / 1200</span>
+</div>
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[70%] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-white/10 mt-1">
+<p class="text-gray-300 text-sm font-medium pr-4 leading-snug">Zero delivery fees active on your next 5 orders</p>
+<button class="shrink-0 bg-primary hover:bg-orange-500 text-background-dark px-4 py-2 rounded-lg text-sm font-bold transition-colors">
+                            View Benefits
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Menu List Sections -->
+<div class="flex flex-col gap-6 px-4">
+<!-- Section 1 -->
+<div class="flex flex-col gap-2">
+<h3 class="text-gray-900 dark:text-white font-serif-heading text-lg font-semibold px-1">Account &amp; Preferences</h3>
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm">
+<a class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<span class="text-gray-900 dark:text-gray-100 font-medium text-base">Personal Details</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<span class="text-gray-900 dark:text-gray-100 font-medium text-base">Saved Addresses</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-white/5 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+<span class="text-gray-900 dark:text-gray-100 font-medium text-base">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Section 2 -->
+<div class="flex flex-col gap-2">
+<h3 class="text-gray-900 dark:text-white font-serif-heading text-lg font-semibold px-1">Orders &amp; History</h3>
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm">
+<a class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<span class="text-gray-900 dark:text-gray-100 font-medium text-base">Your Orders</span>
+<span class="text-gray-500 dark:text-gray-400 text-xs">Reorder from history</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<span class="text-gray-900 dark:text-gray-100 font-medium text-base">Favorites</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-white/5 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<span class="text-gray-900 dark:text-gray-100 font-medium text-base">Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Recent Order Widget (Compact) -->
+<div class="flex flex-col gap-2 mt-2">
+<h3 class="text-gray-900 dark:text-white font-serif-heading text-lg font-semibold px-1">Recent Activity</h3>
+<div class="bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center" data-alt="Sushi platter" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFhDYRb_W2dLE1RkVbMa3WQD7W5syLN_4oelZoT6dkxcRnDdpTQ5Kh0nKMAFYa5ToJlRy9ZnHDwpdIxa6oMRteYr0Zwohw0bJYMJI8tAleV96DluqWXzgZpL02lLSwsfOQ-OCpgfhgkC_EE1Rln2a8AF26cjMQWtBuaI7vgs-p3i_OmKc8dr1BaZMF_yeRKSRMebRkkrSlNYLkrvAyVlZZIxSryOS5qhWAoAOOEDYefdfJMjRCHKizCQw54taTvdLEMLZVIU80Blo");'></div>
+<div class="flex flex-col">
+<span class="text-gray-900 dark:text-gray-100 font-bold text-sm">Sushi Deluxe Set</span>
+<span class="text-gray-500 dark:text-gray-400 text-xs">Delivered • Yesterday</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary text-xs font-bold hover:bg-primary hover:text-background-dark transition-all">
+                         Reorder
+                     </button>
+</div>
+</div>
+</div>
+<!-- Footer / Logout -->
+<div class="mt-8 mb-4 px-4 flex flex-col items-center gap-4">
+<button class="w-full bg-transparent border border-gray-300 dark:border-white/10 text-red-500 dark:text-red-400 font-bold py-3.5 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">logout</span>
+                Log Out
+            </button>
+<p class="text-gray-400 dark:text-gray-600 text-xs">App Version 2.4.1</p>
+</div>
+<div class="h-5"></div>
+</div>
+</body></html>

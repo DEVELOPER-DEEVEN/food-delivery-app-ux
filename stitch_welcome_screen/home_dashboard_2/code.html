@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Food Delivery Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af37", // Luxury Gold
+                        "primary-dark": "#aa8c2c",
+                        "background-light": "#121212", // Dark mode default base
+                        "background-dark": "#0a0a0a", // Deep black for contrast
+                        "card-dark": "#18181b", // Dark grey for cards
+                        "surface-dark": "#27272a", // Slightly lighter surface
+                        "text-muted": "#a1a1aa",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    boxShadow: {
+                        "glow": "0 0 20px rgba(212, 175, 55, 0.3)",
+                        "card": "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gold-gradient': 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }.gold-glow {
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#050505] text-white font-display antialiased min-h-screen pb-24">
+<header class="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/5 px-4 pt-12 pb-4 transition-all duration-300">
+<div class="flex items-center justify-between gap-4">
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-[10px] text-primary tracking-[0.2em] uppercase font-bold mb-0.5">Delivering to</p>
+<button class="flex items-center gap-2 group text-left">
+<span class="text-white text-lg font-serif italic truncate tracking-wide">Downtown Loft, 502</span>
+<span class="material-symbols-outlined text-primary text-xl group-active:rotate-180 transition-transform">expand_more</span>
+</button>
+</div>
+<button class="relative shrink-0 size-10 rounded-full overflow-hidden border border-white/10 hover:border-primary/50 transition-colors ring-2 ring-transparent hover:ring-primary/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzMva0qqrvEMZWs7iA-NOBz8kAsTacwEJkwiyUPdUieAIpGnWoSJE5lB3a1Yfb5ATUgq65ApXRrnYv2DQCWhy8dLZkh0Mw9q2rsHj-tolUvE6PpZPtH5VT7LB91x1_SU2TxSsyoiY6eZ1uqcgEgLe4aqryRDVfvQn8VYCENSj9FDQ26heFzYHjbTOZOgGLDYfsHzPIgT-e-0aobzPEqjkeEzNwS82V_wTsjVd51PjLZE0SYM5FqmIidbaO5k4Tw4JL3yz9ySAZu4"/>
+<div class="absolute top-0 right-0 size-2.5 bg-primary rounded-full border-2 border-black"></div>
+</button>
+</div>
+</header>
+<section class="p-4 mt-2">
+<div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] shadow-2xl ring-1 ring-white/5">
+<div class="absolute -top-32 -right-32 w-80 h-80 bg-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="relative z-10 p-7 flex items-center justify-between gap-4">
+<div class="flex-1 space-y-3">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>Priority Access</span>
+</div>
+<h1 class="text-3xl font-serif text-white leading-[1.1]">
+                        Delivery in <br/>
+<span class="text-transparent bg-clip-text bg-gold-gradient font-italic italic">10 mins</span>
+</h1>
+<p class="text-gray-400 text-xs font-medium tracking-wide">Experiencing high demand in your area.</p>
+</div>
+<div class="relative flex items-center justify-center size-28 shrink-0">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36">
+<path class="text-white/5" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="1.5"></path>
+<path class="text-primary gold-glow" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<div class="absolute flex flex-col items-center justify-center inset-0">
+<span class="text-white text-xl font-bold tabular-nums tracking-tight">09:59</span>
+<span class="text-[9px] text-primary/80 uppercase tracking-widest mt-0.5">Remaining</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full overflow-hidden py-4">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar snap-x">
+<button class="snap-start shrink-0 flex items-center gap-2 h-11 px-6 rounded-full bg-primary text-black font-bold text-sm shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+<span class="tracking-wide">All</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-11 px-6 rounded-full bg-[#1c1c1e] border border-white/5 text-gray-300 font-medium text-sm transition-all active:scale-95 hover:bg-[#27272a] hover:text-white">
+<span class="text-lg grayscale brightness-150">🍣</span>
+<span>Omakase</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-11 px-6 rounded-full bg-[#1c1c1e] border border-white/5 text-gray-300 font-medium text-sm transition-all active:scale-95 hover:bg-[#27272a] hover:text-white">
+<span class="text-lg grayscale brightness-150">🍝</span>
+<span>Italian</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-11 px-6 rounded-full bg-[#1c1c1e] border border-white/5 text-gray-300 font-medium text-sm transition-all active:scale-95 hover:bg-[#27272a] hover:text-white">
+<span class="text-lg grayscale brightness-150">🥩</span>
+<span>Prime Cuts</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-11 px-6 rounded-full bg-[#1c1c1e] border border-white/5 text-gray-300 font-medium text-sm transition-all active:scale-95 hover:bg-[#27272a] hover:text-white">
+<span class="text-lg grayscale brightness-150">🍷</span>
+<span>Sommelier</span>
+</button>
+</div>
+</section>
+<section class="mt-2 px-4">
+<div class="flex items-end justify-between mb-6">
+<div>
+<span class="text-primary text-[10px] uppercase tracking-[0.2em] font-bold block mb-1">Curated Selection</span>
+<h2 class="text-2xl font-serif italic text-white">Chef's Specials</h2>
+</div>
+<button class="text-xs font-medium text-white/60 hover:text-primary transition-colors pb-1 border-b border-transparent hover:border-primary">View all</button>
+</div>
+<div class="flex flex-col gap-8">
+<article class="group relative flex flex-col rounded-[1.5rem] bg-[#141414] shadow-card overflow-hidden ring-1 ring-white/5 hover:ring-primary/30 transition-all duration-500">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="Close up of a juicy wagyu burger with melted cheese and truffle sauce" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbYgsPaKALrB0SGZME9ZP_oKeVc4aW0Prt9D5NTYIj_YaugB1oNnP8KX-iO0X8XsNXg_cD7CgaeQT7Hvx8Eq-29JBbad5lf6PsJIJ27gdaeeAqKlk3R-oN3QSid6isY5DsHMsgnPfJlAshOs5z92Ci7jKwCGDrSgXRhfz0yCWHb-pL7SMQuTZ25IXhJuXk9gyzBR88QTKuAIyTlabgrub-zKtw_Tp8f7SOHVqufAwgPa5Q5rxRif7kUR6CoM69gpdTtDiVN1gVx94");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<h3 class="text-white text-2xl font-serif italic leading-tight">Truffle Wagyu</h3>
+<div class="flex items-center gap-2 text-primary/80 text-xs tracking-wider uppercase font-medium">
+<span>Chef Antonio</span>
+<span class="size-1 rounded-full bg-primary/50"></span>
+<span>Signature</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px] text-primary fill-current">star</span>
+                                4.9
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-2 flex items-center justify-between gap-4 bg-[#141414]">
+<div class="flex flex-col">
+<span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-0.5">Price</span>
+<span class="text-white text-xl font-serif italic">$28.00</span>
+</div>
+<button class="h-11 px-7 bg-white text-black hover:bg-primary transition-colors duration-300 text-sm font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)]">
+<span>Add to Order</span>
+</button>
+</div>
+</article>
+<article class="group relative flex flex-col rounded-[1.5rem] bg-[#141414] shadow-card overflow-hidden ring-1 ring-white/5 hover:ring-primary/30 transition-all duration-500">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="Plate of premium bluefin tuna sashimi slices with garnish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAClEk152JRRaeKAtf2pl2aEKWf9vvMEi2CwcmHghS4nBvNYarGemN_B3n70rvpj8vfhVQ8dvX4xQhs2q9lNtuFWYS7g7945wtUQaH_3fwh2M5KGkWzgB-Sy8B3IFl7SIbqbhNyU9Zy8mwKEiQVJL4HGsPDL1pt-2HtRCDU3u6ioGqbGUCJ7cpqa9DldGwa7P1vaLJmtB8MPnhItgpQm95PzBsUeBr4bMUbIFcIJvHmfmEFyWjMz7CmkTSn0t17HVXKsnlGY02bEJU");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<h3 class="text-white text-2xl font-serif italic leading-tight">Bluefin Otoro</h3>
+<div class="flex items-center gap-2 text-primary/80 text-xs tracking-wider uppercase font-medium">
+<span>Toyosu Import</span>
+<span class="size-1 rounded-full bg-primary/50"></span>
+<span>Limited</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px] text-primary fill-current">star</span>
+                                4.8
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-2 flex items-center justify-between gap-4 bg-[#141414]">
+<div class="flex flex-col">
+<span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-0.5">Price</span>
+<span class="text-white text-xl font-serif italic">$32.00</span>
+</div>
+<button class="h-11 px-7 bg-white text-black hover:bg-primary transition-colors duration-300 text-sm font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)]">
+<span>Add to Order</span>
+</button>
+</div>
+</article>
+<article class="group relative flex flex-col rounded-[1.5rem] bg-[#141414] shadow-card overflow-hidden ring-1 ring-white/5 hover:ring-primary/30 transition-all duration-500">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="Gourmet lobster risotto with fresh herbs on a dark plate" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0xoz6H8lEjOel7vlvaY0pVAtWY0Nqf5HRcPVHk5fs_I3_yn8TAE9xG0x7p4zApSefGUIpoeU4M6PBQZG0NcyKGDeT2p9Q9Xvzp8IgYKPPEndFnuFGuwwxkrZV5KKQ3b5H8rtisrmkUhlq6n6oO5sburqVUPetEdL3zvH53yXWS-V14o-e5Y7PsoxfWtiKMvugY7BbivQSbqtQP8rjqs5FbohL_GV_PyziXyWex29jwm73VkzZrxtamKkr5IiNeHO_-om0qeqc4MY");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1">
+<h3 class="text-white text-2xl font-serif italic leading-tight">Lobster Risotto</h3>
+<div class="flex items-center gap-2 text-primary/80 text-xs tracking-wider uppercase font-medium">
+<span>Chef's Choice</span>
+<span class="size-1 rounded-full bg-primary/50"></span>
+<span>Seasonal</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px] text-primary fill-current">star</span>
+                                5.0
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-5 pt-2 flex items-center justify-between gap-4 bg-[#141414]">
+<div class="flex flex-col">
+<span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-0.5">Price</span>
+<span class="text-white text-xl font-serif italic">$45.00</span>
+</div>
+<button class="h-11 px-7 bg-white text-black hover:bg-primary transition-colors duration-300 text-sm font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)]">
+<span>Add to Order</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<nav class="fixed bottom-0 left-0 w-full z-50 px-4 pb-6 pt-2 pointer-events-none">
+<div class="mx-auto w-full max-w-md h-16 rounded-[1.25rem] bg-[#1a1a1a]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex items-center justify-around pointer-events-auto">
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-primary">
+<span class="material-symbols-outlined text-[24px] fill-current">home</span>
+<span class="text-[9px] font-medium opacity-100">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<button class="relative -top-6 bg-gradient-to-br from-[#d4af37] to-[#aa8c2c] rounded-full size-14 flex items-center justify-center shadow-[0_10px_25px_rgba(212,175,55,0.4)] text-black border-4 border-[#050505] transform transition-transform active:scale-95 group">
+<span class="material-symbols-outlined text-[26px]">shopping_bag</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+</div>
+</nav>
+<div class="h-8"></div>
+
+</body></html>

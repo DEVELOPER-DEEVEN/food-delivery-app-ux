@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dish Detail View</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f48c25",
+              "background-light": "#f8f7f5",
+              "background-dark": "#221910",
+              "surface-dark": "#2E241B", // Slightly lighter than background-dark for cards
+              "text-secondary": "#cbad90",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased selection:bg-primary selection:text-white">
+<div class="relative min-h-screen w-full mx-auto max-w-md bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden flex flex-col">
+<!-- Hero Section with Background Image -->
+<!-- Added extra height to accommodate the parallax feel and content overlap -->
+<div class="relative w-full h-[45vh] shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of delicious truffle mushroom pasta with parmesan cheese" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVOlPvGlqRb7hOD26O54SZHzPZfqDIS3W0tA-NTU6IjJ9xRYlbfgNzysOFJqpY9EYV96h-p0Xbj4oKdzmxtviUO1tF0D6iYJrZgoZDXw4OpW0OSpAeo71d84gzaq9pV5ELevCSnxqG2QdvckZIOOnDHkpGlMqktEaVGboUbmbvdQyEcMvEC-5Ga9VMSOz79gldpmZL-sqxSNe7XMs22IwU34-Y4HqT5lIJrHrxr6LhO4GU4WY6zCjqqBigdE7IksNQPz7VUPOOkpM");'>
+</div>
+<!-- Gradient Overlay for better text/icon visibility at top -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
+<!-- Navigation Bar (Absolute) -->
+<div class="absolute top-0 left-0 right-0 p-4 pt-12 flex justify-between items-center z-20">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-black/40 transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-black/40 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-black/40 transition-colors">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Sheet -->
+<!-- Negative margin pulls this up over the image -->
+<div class="relative -mt-10 flex-1 bg-background-light dark:bg-background-dark rounded-t-3xl z-10 flex flex-col pb-28 overflow-y-auto no-scrollbar">
+<!-- Handle bar for visual affordance -->
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-12 h-1.5 bg-gray-300 dark:bg-white/20 rounded-full"></div>
+</div>
+<!-- Header Info -->
+<div class="px-6 pt-4 pb-2">
+<div class="flex justify-between items-start gap-4">
+<h1 class="text-3xl font-extrabold text-gray-900 dark:text-white leading-tight">Truffle Mushroom Pasta</h1>
+</div>
+<!-- Meta Data Row -->
+<div class="flex items-center gap-4 mt-3 text-sm font-medium">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-current text-[18px]">star</span>
+<span class="text-gray-900 dark:text-white">4.8</span>
+<span class="text-text-secondary font-normal">(120)</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-gray-300 dark:bg-white/20"></div>
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+<span>580 kcal</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-gray-300 dark:bg-white/20"></div>
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>10-15 min</span>
+</div>
+</div>
+<!-- Description -->
+<p class="text-gray-600 dark:text-gray-300 mt-4 leading-relaxed">
+                    Handmade tagliatelle tossed in a rich truffle cream sauce, topped with shaved parmesan and fresh parsley. A perfect blend of earthiness and creaminess.
+                </p>
+</div>
+<!-- Segmented Control (Tabs) -->
+<div class="px-6 mt-6">
+<div class="flex p-1 bg-gray-200 dark:bg-surface-dark rounded-xl">
+<button class="flex-1 py-2.5 text-sm font-bold text-white bg-primary shadow-sm rounded-lg transition-all">
+                        Ingredients
+                    </button>
+<button class="flex-1 py-2.5 text-sm font-bold text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-all">
+                        Nutrition
+                    </button>
+</div>
+</div>
+<!-- Ingredients List -->
+<div class="px-6 mt-6">
+<h3 class="text-gray-900 dark:text-white font-bold text-lg mb-3">What's inside</h3>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-200 text-sm font-medium">
+                        🍄 Wild Mushrooms
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-200 text-sm font-medium">
+                        ✨ Truffle Oil
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-200 text-sm font-medium">
+                        🥛 Heavy Cream
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-200 text-sm font-medium">
+                        🧀 Parmesan
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-200 text-sm font-medium">
+                        🧄 Garlic
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-surface-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-200 text-sm font-medium">
+                        🌿 Parsley
+                    </span>
+</div>
+</div>
+<!-- Special Instructions -->
+<div class="px-6 mt-8">
+<label class="flex items-center gap-2 text-gray-900 dark:text-white font-bold text-lg mb-3" for="instructions">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                    Special Instructions
+                </label>
+<textarea class="w-full bg-gray-50 dark:bg-surface-dark border border-gray-200 dark:border-white/10 rounded-xl p-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none text-sm" id="instructions" placeholder="E.g. No onions, extra sauce, allergy info..." rows="3"></textarea>
+</div>
+<!-- Padding for bottom scroll -->
+<div class="h-8"></div>
+</div>
+<!-- Sticky Footer -->
+<div class="fixed bottom-0 left-0 right-0 z-50">
+<!-- Constrain width to max-w-md to match main container on desktop -->
+<div class="max-w-md mx-auto w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-white/5 p-4 pb-8 backdrop-blur-xl bg-opacity-95 dark:bg-opacity-95">
+<div class="flex items-center gap-4">
+<!-- Quantity Stepper -->
+<div class="flex items-center bg-gray-200 dark:bg-surface-dark rounded-full p-1 h-14 shrink-0">
+<button class="w-10 h-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<span class="w-6 text-center text-gray-900 dark:text-white font-bold text-lg">1</span>
+<button class="w-10 h-full flex items-center justify-center text-gray-900 dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<!-- Add to Cart Button -->
+<button class="flex-1 h-14 bg-primary hover:bg-orange-600 active:scale-[0.98] transition-all rounded-2xl flex items-center justify-between px-6 shadow-lg shadow-orange-500/20">
+<span class="text-white font-bold text-lg">Add to order</span>
+<span class="text-white font-medium text-lg bg-white/20 px-2 py-0.5 rounded-lg">$18.50</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

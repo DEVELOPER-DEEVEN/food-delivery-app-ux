@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-dark": "#342618", // Custom surface color based on example
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight flex-1 text-center">My Order</h1>
+<button class="text-sm font-bold text-primary hover:text-primary/80 transition-colors">
+                Clear
+            </button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-4 pb-32">
+<!-- Delivery Status Card -->
+<div class="mt-4 mb-6">
+<div class="group relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10 pointer-events-none"></div>
+<!-- Background Image -->
+<div class="w-full h-32 bg-center bg-cover" data-alt="Dark stylized map of city streets with orange route line" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuComo_TbcihHe45ebFIiY3LedlxDme9WalmdWucgZ70BCgweGZCTHtVMlSp0iLlmL3e_n9sXFuaYyV5fma_rNIiCuO9lEWVeqwpJ6vjtS6xoiXSP1yZpp0CLxzDNaV_mywIEbX7eJax1o7cm6tVjHGh4A7j70fgnv1OzRIWUm3tISqBESzkeKCZDWxZR80eqRZjKJ5zAnp1AIO-DXSBSR0jzxh8pWY9vGOnHXcRGWewvMNOQIDM-DtP5ieIvUXIl930vtMlxBPfHD0');">
+</div>
+<div class="absolute inset-0 z-20 flex flex-col justify-center px-5">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xl animate-pulse">local_shipping</span>
+<p class="text-primary text-xs font-bold uppercase tracking-wider">On the way</p>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight">Arriving in ~10 mins</h2>
+<p class="text-white/70 text-sm mt-1">Express Delivery</p>
+</div>
+</div>
+</div>
+<!-- Cart Items List -->
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex gap-4 p-3 bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
+<div class="relative shrink-0">
+<div class="w-20 h-20 bg-gray-200 dark:bg-gray-800 rounded-lg bg-cover bg-center" data-alt="Plate of creamy truffle oil pasta with garnish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1b9ga9iZkToCs1mE7Kl27bicHiriLOt8S7N81LWl_4MuT5i8N0bgI-kZkgosDhYNX3yIv_Q-JnVwCAwtBKawKdly7hEboiKJW3MRIGNdwUNVZDdPov2lSKF9sNaaz7huutTX8_EDSxNv_1Yt_eFWMSCGErLLirUEjFJ1LVCU1TlMZfG955q8D861F_7Tone3NaNOHFVk1OZrNRMOG0Y3zbXyOk8jfn_Li17EjfvP2vBwIaUjL5b1v6iyugstHR_tcHW4NW0-mwt8');">
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<h3 class="text-base font-bold leading-tight line-clamp-1">Truffle Oil Pasta</h3>
+<p class="text-primary font-semibold mt-1">$18.50</p>
+</div>
+<!-- Quantity Control -->
+<div class="flex justify-end">
+<div class="flex items-center gap-3 bg-gray-100 dark:bg-[#493622] rounded-full px-1 py-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-white dark:bg-white/10 text-gray-600 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<span class="text-sm font-bold w-4 text-center">1</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 p-3 bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
+<div class="relative shrink-0">
+<div class="w-20 h-20 bg-gray-200 dark:bg-gray-800 rounded-lg bg-cover bg-center" data-alt="Freshly baked artisan sourdough bread loaf" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvrPiu5PprKXQxmLNDaBBcjwiokx55OgPUyF1o-QuWI12OtgAJPJ0pB18fiUPQQHHAZWVRTXY-hTJ5dVcVTqkYWasn3fMWPvQnzxOZQISGRm2KjN9Nl2fR3tmmr7uvTgJXO69M2ivtPEoELUanfaquqwtNV2ZGlhXUTxBRWIojIeQB2Svlip8s2TbRR9iptPpdzd-3htF622wjS4n5ZLq4KknI_Yuo9of2RoZMGsVoXS_x8eYDG8BCCAA_zltMbk6482gIVzQOSTk');">
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<h3 class="text-base font-bold leading-tight line-clamp-1">Artisan Sourdough</h3>
+<p class="text-primary font-semibold mt-1">$6.00</p>
+</div>
+<div class="flex justify-end">
+<div class="flex items-center gap-3 bg-gray-100 dark:bg-[#493622] rounded-full px-1 py-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-white dark:bg-white/10 text-gray-600 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<span class="text-sm font-bold w-4 text-center">1</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 p-3 bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
+<div class="relative shrink-0">
+<div class="w-20 h-20 bg-gray-200 dark:bg-gray-800 rounded-lg bg-cover bg-center" data-alt="Creamy burrata cheese with tomatoes and basil" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWZDHVhe5KDLOWN3uHrVzh-xp61McWirR8sR_iCdi7IUOPnehYoQP3M8bFt2w-mE_BGBCOW_W3pMUZ_y8hh9dd9jAbzjb69qBoXQU_eLDoGknr_bZLl7n0M1rtS486yVMm48e8WDV18jG_Z0ujLOQ6G4EgtJGJdFsLILg2KKvf0g1lIIIFs6HiPAwoD2pPIQWrUdsuSAn8N_H-6_xe_DeKWsFoc3R1bbzxPFylyJQ0N-h9-Jjho5BbwTrJ-zjWJTXNYrVozUGdLMw');">
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<h3 class="text-base font-bold leading-tight line-clamp-1">Burrata Cheese</h3>
+<p class="text-primary font-semibold mt-1">$12.00</p>
+</div>
+<div class="flex justify-end">
+<div class="flex items-center gap-3 bg-gray-100 dark:bg-[#493622] rounded-full px-1 py-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-white dark:bg-white/10 text-gray-600 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<span class="text-sm font-bold w-4 text-center">2</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="mt-8 mb-6">
+<h3 class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4 px-1">Payment Details</h3>
+<div class="flex flex-col gap-3 bg-white dark:bg-surface-dark p-5 rounded-2xl border border-gray-100 dark:border-white/5">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-600 dark:text-gray-400">Subtotal</span>
+<span class="font-medium">$48.50</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span class="font-bold">Express Delivery</span>
+</div>
+<span class="font-bold text-primary">$2.99</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-600 dark:text-gray-400">Service Fee</span>
+<span class="font-medium">$1.50</span>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-white/10 my-1"></div>
+<div class="flex justify-between items-center text-lg">
+<span class="font-bold">Total</span>
+<span class="font-bold">$52.99</span>
+</div>
+</div>
+</div>
+<!-- Spacer for floating bar -->
+<div class="h-20"></div>
+</main>
+<!-- Floating Checkout Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 p-4 max-w-md mx-auto">
+<!-- Blur Backdrop gradient for smooth fade -->
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/95 dark:via-background-dark/95 to-transparent pointer-events-none -z-10"></div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white rounded-2xl py-4 px-6 flex items-center justify-between shadow-lg shadow-primary/20 transform active:scale-[0.98] transition-all">
+<span class="font-bold text-lg">Checkout</span>
+<div class="flex items-center gap-3">
+<div class="bg-white/20 h-6 w-px"></div>
+<span class="font-bold text-lg tracking-tight">$52.99</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</body></html>

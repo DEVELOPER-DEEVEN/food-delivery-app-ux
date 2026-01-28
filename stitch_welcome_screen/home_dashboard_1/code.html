@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Food Delivery Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "card-dark": "#2d2319", // Slightly lighter than background-dark for cards
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-white/5 px-4 pt-12 pb-4">
+<div class="flex items-center justify-between gap-4">
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-xs text-gray-500 dark:text-[#cbad90] font-medium tracking-wide uppercase">Delivering to</p>
+<button class="flex items-center gap-1 group text-left">
+<span class="text-gray-900 dark:text-white text-base font-bold truncate">Downtown Loft, 502</span>
+<span class="material-symbols-outlined text-primary text-xl group-active:rotate-180 transition-transform">expand_more</span>
+</button>
+</div>
+<button class="relative shrink-0 size-10 rounded-full overflow-hidden border-2 border-transparent hover:border-primary transition-colors">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzMva0qqrvEMZWs7iA-NOBz8kAsTacwEJkwiyUPdUieAIpGnWoSJE5lB3a1Yfb5ATUgq65ApXRrnYv2DQCWhy8dLZkh0Mw9q2rsHj-tolUvE6PpZPtH5VT7LB91x1_SU2TxSsyoiY6eZ1uqcgEgLe4aqryRDVfvQn8VYCENSj9FDQ26heFzYHjbTOZOgGLDYfsHzPIgT-e-0aobzPEqjkeEzNwS82V_wTsjVd51PjLZE0SYM5FqmIidbaO5k4Tw4JL3yz9ySAZu4"/>
+<div class="absolute top-0 right-0 size-2.5 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></div>
+</button>
+</div>
+</header>
+<!-- Hero Section: Promise of Speed -->
+<section class="p-4 mt-2">
+<div class="relative overflow-hidden rounded-2xl bg-[#1a130c] shadow-lg ring-1 ring-white/10">
+<!-- Background glow effect -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-3xl rounded-full pointer-events-none"></div>
+<div class="relative z-10 p-6 flex items-center justify-between gap-4">
+<div class="flex-1 space-y-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>Fast Track</span>
+</div>
+<h1 class="text-3xl font-black text-white leading-tight">
+                        Delivery in <br/>
+<span class="text-primary">10 mins</span>
+</h1>
+<p class="text-gray-400 text-sm font-medium">Premium dining at your door.</p>
+</div>
+<!-- Countdown Visual -->
+<div class="relative flex items-center justify-center size-24 shrink-0">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="2"></path>
+<!-- Progress Circle -->
+<path class="text-primary drop-shadow-[0_0_8px_rgba(244,140,37,0.5)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-white text-lg font-bold tabular-nums">09:59</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories: Chips -->
+<section class="w-full overflow-hidden py-4">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar snap-x">
+<button class="snap-start shrink-0 flex items-center gap-2 h-10 px-5 rounded-full bg-primary text-[#231a10] font-bold text-sm shadow-md shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span>All</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-10 px-5 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-300 font-medium text-sm transition-transform active:scale-95">
+<span class="text-xl">🍣</span>
+<span>Sushi</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-10 px-5 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-300 font-medium text-sm transition-transform active:scale-95">
+<span class="text-xl">🍝</span>
+<span>Italian</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-10 px-5 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-300 font-medium text-sm transition-transform active:scale-95">
+<span class="text-xl">🥩</span>
+<span>Steaks</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-10 px-5 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-300 font-medium text-sm transition-transform active:scale-95">
+<span class="text-xl">🥗</span>
+<span>Vegan</span>
+</button>
+<button class="snap-start shrink-0 flex items-center gap-2 h-10 px-5 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 text-gray-700 dark:text-gray-300 font-medium text-sm transition-transform active:scale-95">
+<span class="text-xl">🍷</span>
+<span>Wine</span>
+</button>
+</div>
+</section>
+<!-- Featured Section: Chef's Specials -->
+<section class="mt-4 px-4">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Chef's Specials</h2>
+<button class="text-sm font-semibold text-primary hover:text-primary/80">See all</button>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Card 1 -->
+<article class="group relative flex flex-col rounded-2xl bg-white dark:bg-card-dark shadow-md overflow-hidden ring-1 ring-black/5 dark:ring-white/5">
+<div class="relative w-full aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a juicy wagyu burger with melted cheese and truffle sauce" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbYgsPaKALrB0SGZME9ZP_oKeVc4aW0Prt9D5NTYIj_YaugB1oNnP8KX-iO0X8XsNXg_cD7CgaeQT7Hvx8Eq-29JBbad5lf6PsJIJ27gdaeeAqKlk3R-oN3QSid6isY5DsHMsgnPfJlAshOs5z92Ci7jKwCGDrSgXRhfz0yCWHb-pL7SMQuTZ25IXhJuXk9gyzBR88QTKuAIyTlabgrub-zKtw_Tp8f7SOHVqufAwgPa5Q5rxRif7kUR6CoM69gpdTtDiVN1gVx94");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<!-- Overlay Text -->
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-start justify-between gap-4">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight mb-1">Truffle Wagyu Burger</h3>
+<p class="text-gray-300 text-sm font-medium">Curated by Chef Antonio</p>
+</div>
+<div class="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-lg text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                4.9
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="text-gray-400 dark:text-gray-500 text-xs font-medium uppercase tracking-wider">Price</span>
+<span class="text-gray-900 dark:text-white text-lg font-bold">$28.00</span>
+</div>
+<button class="h-10 px-6 bg-primary hover:bg-primary/90 text-[#231a10] text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span>Add</span>
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative flex flex-col rounded-2xl bg-white dark:bg-card-dark shadow-md overflow-hidden ring-1 ring-black/5 dark:ring-white/5">
+<div class="relative w-full aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Plate of premium bluefin tuna sashimi slices with garnish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAClEk152JRRaeKAtf2pl2aEKWf9vvMEi2CwcmHghS4nBvNYarGemN_B3n70rvpj8vfhVQ8dvX4xQhs2q9lNtuFWYS7g7945wtUQaH_3fwh2M5KGkWzgB-Sy8B3IFl7SIbqbhNyU9Zy8mwKEiQVJL4HGsPDL1pt-2HtRCDU3u6ioGqbGUCJ7cpqa9DldGwa7P1vaLJmtB8MPnhItgpQm95PzBsUeBr4bMUbIFcIJvHmfmEFyWjMz7CmkTSn0t17HVXKsnlGY02bEJU");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<!-- Overlay Text -->
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-start justify-between gap-4">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight mb-1">Bluefin Tuna Sashimi</h3>
+<p class="text-gray-300 text-sm font-medium">Japanese Import</p>
+</div>
+<div class="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-lg text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                4.8
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="text-gray-400 dark:text-gray-500 text-xs font-medium uppercase tracking-wider">Price</span>
+<span class="text-gray-900 dark:text-white text-lg font-bold">$32.00</span>
+</div>
+<button class="h-10 px-6 bg-primary hover:bg-primary/90 text-[#231a10] text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span>Add</span>
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative flex flex-col rounded-2xl bg-white dark:bg-card-dark shadow-md overflow-hidden ring-1 ring-black/5 dark:ring-white/5">
+<div class="relative w-full aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Gourmet lobster risotto with fresh herbs on a dark plate" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0xoz6H8lEjOel7vlvaY0pVAtWY0Nqf5HRcPVHk5fs_I3_yn8TAE9xG0x7p4zApSefGUIpoeU4M6PBQZG0NcyKGDeT2p9Q9Xvzp8IgYKPPEndFnuFGuwwxkrZV5KKQ3b5H8rtisrmkUhlq6n6oO5sburqVUPetEdL3zvH53yXWS-V14o-e5Y7PsoxfWtiKMvugY7BbivQSbqtQP8rjqs5FbohL_GV_PyziXyWex29jwm73VkzZrxtamKkr5IiNeHO_-om0qeqc4MY");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<!-- Overlay Text -->
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-start justify-between gap-4">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight mb-1">Lobster Risotto</h3>
+<p class="text-gray-300 text-sm font-medium">Signature Dish</p>
+</div>
+<div class="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-lg text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                5.0
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="text-gray-400 dark:text-gray-500 text-xs font-medium uppercase tracking-wider">Price</span>
+<span class="text-gray-900 dark:text-white text-lg font-bold">$45.00</span>
+</div>
+<button class="h-10 px-6 bg-primary hover:bg-primary/90 text-[#231a10] text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span>Add</span>
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Bottom Navigation Bar (Glassmorphism) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 px-4 pb-6 pt-2">
+<div class="mx-auto w-full max-w-md h-16 rounded-2xl bg-white/80 dark:bg-[#2d2319]/80 backdrop-blur-xl border border-white/20 shadow-2xl flex items-center justify-around">
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-primary">
+<span class="material-symbols-outlined text-[26px] fill-current">home</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined text-[26px]">search</span>
+</button>
+<!-- Center Floating Action Button (Optional Aesthetic) -->
+<button class="relative -top-6 bg-primary rounded-full size-14 flex items-center justify-center shadow-lg shadow-primary/30 text-[#231a10] border-4 border-background-light dark:border-background-dark transform transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[28px]">shopping_bag</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-14 h-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined text-[26px]">person</span>
+</button>
+</div>
+</nav>
+<!-- Spacer for scroll -->
+<div class="h-8"></div>
+</body></html>

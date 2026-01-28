@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Eats - Welcome</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gradient-overlay': 'linear-gradient(to bottom, rgba(34, 25, 16, 0.2) 0%, rgba(34, 25, 16, 0.4) 40%, rgba(34, 25, 16, 0.9) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden">
+<div class="relative w-full h-screen overflow-hidden flex flex-col justify-end">
+<!-- Full Screen Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up of gourmet steak with rosemary and dark lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXMeaMinAZLQ3GQ2ma2OELcIx32TysPiUPAorUQrYM3SdexWp79WDBGmIk8jQuYisSUJPwudUJrv7hwfxsOBLDDF_YhxGQsjqewatbYD7B8JEm4vPt2WEssgQupopsAiV86I3JH1UFnJm5L816NgNExkVA0G_gcFsotJnF-EwV0id279vbmbev1rjEy3rt8S5n3X-S33_lLzz95JXAA8lMRLF3F36aEqth09iS00W0vZcUBLo-9ViL3wKzc4dkNNlwX5_VXSYMEk0");'>
+</div>
+<!-- Gradient Overlay for Readability -->
+<div class="absolute inset-0 bg-gradient-overlay z-10"></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-20 w-full flex flex-col items-center pb-8 px-6 pt-20 h-full justify-between">
+<!-- Top Section: Logo (Empty spacer to push content down or keep logo at top if preferred) -->
+<div class="flex-1 w-full flex flex-col items-center justify-start pt-12">
+<!-- Logo Mark -->
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/20 shadow-2xl">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
+</div>
+</div>
+<!-- Bottom Section: Text and Actions -->
+<div class="w-full max-w-md flex flex-col items-center text-center space-y-8 animate-fade-in-up">
+<!-- Headlines -->
+<div class="space-y-2">
+<h1 class="text-white tracking-tight text-[42px] font-extrabold leading-[1.1]">
+                        LUXE EATS<span class="text-primary">.</span>
+</h1>
+<p class="text-white/80 text-lg font-light leading-relaxed max-w-[280px] mx-auto">
+                        Exquisite dining. <br/> Delivered in 10 minutes.
+                    </p>
+</div>
+<!-- Action Buttons -->
+<div class="w-full space-y-5">
+<!-- Primary Button -->
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-14 px-6 bg-primary hover:bg-primary/90 transition-colors duration-300 text-background-dark text-[17px] font-bold tracking-wide shadow-lg shadow-primary/20">
+<span>Get Started</span>
+</button>
+<!-- Secondary Link -->
+<div class="pb-2">
+<button class="text-[#cbad90] hover:text-white transition-colors text-sm font-medium underline underline-offset-4 decoration-[#cbad90]/50 hover:decoration-white">
+                            Already have an account? Sign In
+                        </button>
+</div>
+</div>
+<!-- Safe Area Spacer for iOS Home Indicator -->
+<div class="h-2"></div>
+</div>
+</div>
+</div>
+</body></html>
